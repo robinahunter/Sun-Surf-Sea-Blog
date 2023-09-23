@@ -13,3 +13,9 @@ db.on('connected', function () {
 module.exports = {
     BlogPost: require('./blogPost')
 }
+
+// Export models and seed data to server.js
+module.exports = {
+    BlogPost: require('./blogPost'),
+    seedBlogPosts: require('./seed')
+}
