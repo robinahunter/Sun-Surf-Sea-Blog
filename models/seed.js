@@ -41,7 +41,7 @@ const blogPosts = [
         //Say thanks: https://unsplash.com/@johnbellphoto
         image: 'https://i.postimg.cc/43FcGMhY/maui.jpg',
         description: 'Imagine gliding gracefully on crystal-clear waters, surrounded by lush greenery and the gentle rustle of palm trees. Now, imagine doing all this on a paddleboard, under the Hawaiian sun. Welcome to the enchanting world of paddle boarding in Maui, where adventure meets tranquility, and every stroke of your paddle takes you deeper into paradise.',
-        isFeatured: true,
+        featured: true,
         datePublished: "2023-09-22T17:43:05.000Z"
     },
     {
@@ -93,9 +93,9 @@ const blogPosts = [
         `,
         topic: 'Living',
         //Say thanks: https://unsplash.com/@nisharamesh
-        image: 'IMAGE: https://i.postimg.cc/XvnG9W9G/coconut-milk.jpg',
+        image: 'https://i.postimg.cc/XvnG9W9G/coconut-milk.jpg',
         description: "Coconuts have long been celebrated as nature's versatile treasures, offering everything from refreshing coconut water to exotic tropical desserts. But today, we're diving into the delightful world of homemade coconut milk—a creamy concoction that's not only a taste bud's dream but also an eco-conscious choice. Get ready to embark on a journey that's nutty, creamy, and oh-so-tasty.",
-        isFeatured: true,
+        featured: true,
         datePublished: "2023-09-10T10:34:00.000Z"
     },
     {
@@ -117,7 +117,7 @@ const blogPosts = [
         topic: 'Travel',
         image: 'https://i.postimg.cc/5yK5NXzB/cenote-mexico2.jpg',
         description: "Explore the 'Lake of Seven Colors,' a captivating oasis in the heart of the Yucatan Peninsula, where crystal-clear cenote-fed waters create a breathtaking canvas of blues and turquoises.",
-        isFeatured: true,
+        featured: true,
         datePublished: "2023-08-21T08:32:14.000Z"
     }
 ]

@@ -35,9 +35,11 @@ app.set('views', path.join(__dirname, 'views'));
 // Middleware/ app.use
 app.use(express.static('public'))
 app.use(connectLiveReload());
-
+app.use(express.urlencoded({ extended: true }));
 
 // Mount routes
+
+// Home route
 app.get('/', function (req, res) {
     db.BlogPost.find({ featured: true })
         .then(blogPosts => {
@@ -47,6 +49,10 @@ app.get('/', function (req, res) {
         })
 });
 
+//About route
+app.get('/about', function (req, res) {
+    res.send("You have arrived at the ABOUT ROUTE")
+});
 
 // When a GET request is sent to `/seed`, the blogPosts collection is seeded
 app.get('/seed', function (req, res) {
@@ -66,6 +72,10 @@ app.get('/seed', function (req, res) {
 // Tells app to look at controllers/blogPosts.js, to handle routes that begin with localhost:3000/sun-surf-sea
 app.use('/blogPosts', blogPostsCtrl)
 
+// Catch-all route for any other URL that doesn't match the above routes
+app.get('*', function (req, res) {
+    res.send('404 Error: Page Not Found')
+});
 
 // App listening on specified port
 app.listen(process.env.PORT, function () {

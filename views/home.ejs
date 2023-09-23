@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'SUN SURF SEA'}) %>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main>
+        <ul class="featured">         
+            <% for (let blogPost of blogPosts) { %>
+                <li>
+                <figure>
+                    <img class="featured" src="<%= blogPost.image %>" alt="img">
+                </figure>
+                <figcaption>
+                    <div>
+                        <br>
+                        <h3><%= blogPost.headline %></h3>
+                        <br>
+                        <p><%= blogPost.description %> </p>
+                        <a href="/blogPosts/<%= blogPost._id %>" class="btn">MORE</a>
+                    </div>
+                    <br>
+                </figcaption>
+                </li>
+            <% } %>
+        </ul>   
+    </main>
+
+    <%- include('./partials/foot.ejs') %>
+</body>
+
+</html>
