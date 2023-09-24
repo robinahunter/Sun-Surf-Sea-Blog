@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Review SUN SURF SEA'}) %>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/review-new.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <br>
+    <br>
+    <br>
+    <div>
+        <h2>NEW REVIEW</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="detail-box"></div>
+    <figure>
+        <img class="detailImg" src="<%= blogPost.image %>" alt="blog image">
+    </figure>
+        <br>
+        <h1><%= blogPost.headline %></h1>
+        <br>
+    </div> 
+    <form action="/reviews/create/<%= blogPost._id %>" method="POST">
+
+        <label for="reviewName">Name:</label> 
+        <input class="input" type="text" id="reviewName" name="reviewName" required>
+        <br>
+        <br>
+       
+        <label for="reviewEmail">Email:</label> 
+        <input class="input" type="text" id="reviewEmail" name="reviewEmail" required>  
+        <br>
+        <br>
+   
+        <label for="reviewRating">Rating:</label>
+        <input class="input" type="number" id="reviewRating" name="reviewRating" required>
+        <br>
+        <br>
+   
+        <label for="reviewDescription">Description:</label>
+        <input class="input" type="text" id="reviewDescription" name="reviewDescription" required>
+        <br>
+        <br>
+        
+        <input class="btn" type="submit" value="NEW">
+        <br>
+        <br>
+        <br>
+        <br>
+    </form>
+
+    <%- include('./partials/foot.ejs') %>
+</body>
+
+</html>

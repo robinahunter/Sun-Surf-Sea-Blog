@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'SUN SURF SEA'}) %>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main>
+    <br>
+        <section >
+            <h2>REVIEW INDEX</h2>
+            <br>
+            <div class="index-box">
+                <ul class="index">         
+                    <% for (let review of reviews) { %>
+                        <li>
+                           
+                        <figcaption>
+                            <div>
+                                <br>
+                                <h3><%= review.reviewName %>  |  <%= review.reviewEmail %></h3>
+                                <br>
+                                <p>DATE: $<%= review.reviewDate %> </p>
+                                <p>RATING:<%= review.reviewRating %> </p>
+                                <a href="/reviews/<%= review._id %>" class="btn">DETAILS</a>
+                            </div>
+                            <br>
+                        </figcaption>
+                        </li>
+                    <% } %>
+                </ul> 
+                <br>
+            </div>        
+        </section>       
+    </main>
+
+    <%- include('./partials/foot.ejs') %>
+</body>
+
+</html>

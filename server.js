@@ -4,6 +4,8 @@ const path = require('path');
 const express = require('express');
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
+const methodOverride = require('method-override');
+
 
 
 // Require the db connection, models, and seed data
@@ -11,6 +13,7 @@ const db = require('./models');
 
 // Require routes in controllers folder
 const blogPostsCtrl = require('./controllers/blogPosts')
+const reviewsCtrl = require('./controllers/reviews')
 
 
 // Create the Express app
@@ -29,13 +32,21 @@ liveReloadServer.server.once("connection", () => {
 
 // Configure the app/ app.set
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', [
+    path.join(__dirname, 'views'),
+    path.join(__dirname, 'views', 'blogPosts'),
+    path.join(__dirname, 'views', 'reviews'),
+]);
 
 
 // Middleware/ app.use
 app.use(express.static('public'))
 app.use(connectLiveReload());
+//Body parser for POST PUT PATCH
 app.use(express.urlencoded({ extended: true }));
+//POST request override to DELETE PUT PATCH
+app.use(methodOverride('_method'));
+
 
 // Mount routes
 
@@ -51,7 +62,7 @@ app.get('/', function (req, res) {
 
 //About route
 app.get('/about', function (req, res) {
-    res.send("You have arrived at the ABOUT ROUTE")
+    res.render('about')
 });
 
 // When a GET request is sent to `/seed`, the blogPosts collection is seeded
@@ -69,12 +80,16 @@ app.get('/seed', function (req, res) {
         })
 });
 
-// Tells app to look at controllers/blogPosts.js, to handle routes that begin with localhost:3000/sun-surf-sea
+// Tells app to look at controllers/blogPosts.js, to handle routes that begin with localhost:3000/blogPosts
 app.use('/blogPosts', blogPostsCtrl)
+
+
+//look at controller file for routes that begin with /reviews
+app.use('/reviews', reviewsCtrl)
 
 // Catch-all route for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {
-    res.send('404 Error: Page Not Found')
+    res.render('404')
 });
 
 // App listening on specified port

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'New Blog'}) %>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <h1> NEW BLOG POST</h1>
+    <form method="POST" action="/blogPosts">
+        <!-- Sample form input entry /ensure name field matches schema -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        
+        <input type="submit" value="Create Blog">
+    </form>
+
+    <%- include('./partials/foot.ejs') %>
+</body>
+
+</html>

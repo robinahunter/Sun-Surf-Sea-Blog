@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: `SUN SURF SEA`}) %>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <br>
+    <div class="detail-box">
+       
+    <div>
+        <br>
+        <h1>REVIEW DETAIL</h1>
+        <br>
+        <p><%= review.reviewDescription %> </p>
+        <p><strong>RATING:</strong><%= review.reviewRating %>   |   <strong>DATE: </strong> <%= review.reviewDate %>   |   <strong></strong> <%= review.reviewEmail %></p>
+        <br>
+        <form method="POST" action="/reviews/<%= review._id %>?_method=DELETE">
+            <input class="btn" type="submit" value="Delete" />
+        </form>
+    <br>
+    <br>
+    </div>   
+    <%- include('./partials/foot.ejs') %>
+</body>
+</html>

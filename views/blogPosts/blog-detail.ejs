@@ -10,7 +10,15 @@
     <%- include('./partials/nav.ejs') %>
 
    <main>
+    <h1>Blog Details Page</h1>
 
+    <section class="">
+        <button class=""><a href="/blogPosts/<%= blogPost._id %>/edit">Edit</a></button>
+        <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=DELETE">
+            <input class="" type="submit" value="Delete" />
+        </form>
+    </section>
+    
    </main>
 
     <%- include('./partials/foot.ejs') %>
