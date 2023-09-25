@@ -2,14 +2,30 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'SUN SURF SEA'}) %>
+    <%- include('./partials/head.ejs', {title: 'sun surf sea'}) %>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 
-<body>
-    <%- include('./partials/nav.ejs') %>
+<body >
+    <div class="featureTopBox container-xxl px-md-5 bg-white">
+        <%- include('./partials/nav.ejs') %>
+     
+    <div class="titleBox d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-12 col-8 row-2">
+            <img src="https://i.postimg.cc/8znbZvRv/ruslan-bardash-unsplash.png" width="500 class=d-block mx-lg-auto img-fluid" Loading="lazy" alt="sun surf sea">
+    
+        <div class="col-7 row-2">
+            <h2 class="display-6 fw-bold mb-2">Uncharted Waters & Off the Beaten Path Adventures</h2>
+            <p class="lead">Come dive with us into the depths of the unknown, where the vast ocean becomes our canvas and life's greatest mysteries unfold. Join our Off the Beaten Path journey as we chart uncharted waters, exploring the ocean's hidden wonders and discovering the profound connection between the sea and the essence of life itself.</p>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
+            <a href="/" class="btn btn-primary btn-dark btn-lg px-3 me-md-4">Explore</a>
+            <a href="/" class="btn btn-outline-secondary btn-lg px-3 me-md-2">Review</a>
+        </div>
+        <br><br>
+    </div>
 
-    <main>
+    <div>
         <ul class="featured">         
             <% for (let blogPost of blogPosts) { %>
                 <li>
@@ -19,9 +35,8 @@
                 <figcaption>
                     <div>
                         <br>
-                        <h3><%= blogPost.headline %></h3>
+                        <h5><%= blogPost.headline %></h5>
                         <br>
-                        <p><%= blogPost.description %> </p>
                         <a href="/blogPosts/<%= blogPost._id %>" class="btn">MORE</a>
                     </div>
                     <br>
@@ -29,9 +44,12 @@
                 </li>
             <% } %>
         </ul>   
-    </main>
+    </div>
 
+    </div>
+    </div>
     <%- include('./partials/foot.ejs') %>
+</div>    
 </body>
 
 </html>

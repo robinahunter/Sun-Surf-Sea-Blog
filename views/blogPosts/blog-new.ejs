@@ -10,10 +10,30 @@
     <%- include('./partials/nav.ejs') %>
     <h1> NEW BLOG POST</h1>
     <form method="POST" action="/blogPosts">
-        <!-- Sample form input entry /ensure name field matches schema -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <!-- FORM INPUT NEW BLOG POST -->
+        <label for="authorName">Author:</label>
+        <input type="text" id="authorName" name="authorName" required>
         <br>
+
+        <label for="headline">Title:</label>
+        <input type="text" id="headline" name="headline" required>
+        <br>
+
+        <label for="article">Story:</label>
+        <input type="text" id="article" name="article" required>
+        <br>
+        
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" name="topic" required>
+        <br>
+
+        <label for="image">Image URL:</label>
+        <input type="text" id="image" name="image" required>
+        <br>
+        
+        <label for="description">Short Description:</label>
+        <input type="text" id="description" name="description" required>
+        <br><br><br><br>
         
         <input type="submit" value="Create Blog">
     </form>

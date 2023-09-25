@@ -1,8 +1,29 @@
-body {
-    max-width: 900px;
-    margin: auto;
-}
-.featured {
+/*   font-family: 'Ubuntu', sans-serif;             */
+/*   font-family: 'Ubuntu Condensed', sans-serif;   */
+/*   font-family: 'Ubuntu Mono', monospace;         */
+/*   font-family: 'Dancing Script', cursive;        */
 
-    max-width: 85%;
+/* COLORS: Off-black: #414141, Cream: #f6ede3, Hibiscus #ecf8ba, Sea: #6ecbd2, Navy: #024468         */
+
+:root {
+    --bs-font-sans-serif:'Ubuntu', sans-serif;
+
+}
+body {
+   background-image: url("https://i.postimg.cc/HjD6V0DV/Wave-Cream.png");
+}
+
+/* HOME */
+.featured {
+    display: inline-flex;
+    border-radius: 11%;
+    max-width: 75%;
+    text-decoration: none;
+    list-style: none;
+}
+.titleBox {
+    max-width: 1320px;
+    background-color: white;
+    display: inline-flex;
+    margin: auto;
 }

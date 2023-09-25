@@ -29,7 +29,7 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
     console.log(req.body)
     db.BlogPost.create(req.body)
-    .then(blogPost => res.redirect('blogPosts/blogPost/' + blogPost._id))
+    .then(blogPost => res.redirect('blogPosts/' + blogPost._id))
 });
 
 // Show Route /GET/Read  - Will display an individual blog document
@@ -64,7 +64,7 @@ router.put('/:id', (req, res) => {
 //Destroy route
 router.delete('/:id', (req, res) => {
     db.BlogPost.findByIdAndRemove(req.params.id)
-    .then(() => res.redirect('blogPosts/blogPosts'))
+    .then(() => res.redirect('blogPost-index'))
 });
 
 // Export routes so that they are accessible in server.js
