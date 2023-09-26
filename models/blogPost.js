@@ -6,9 +6,10 @@ const reviewSchema = require('./review.js')
 const blogPostSchema = new mongoose.Schema({
     authorName: { type: String, required: true },
     headline: { type: String, required: true },
-    article: { type: String, required: true },
+    article: { type: [String], required: true },
     topic: { type: String, enum: ['Travel', 'Living', 'Surfing', 'Paddling', 'Snorkeling', 'Wind', 'Swimming'], required: true },
     image: { type: String, required: true },
+    imageSource: { type: String, required: true },
     description: { type: String, required: true },
     featured: { type: Boolean, default: false },
     datePublished: { type: Date, default: Date.now },

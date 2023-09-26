@@ -23,7 +23,6 @@ body {
 .Page {
     border-radius: 1%;
     margin-top: 3%;
-
 }
 .featureTopBox {
     display: block;
@@ -36,8 +35,7 @@ body {
 }
 .featureImg {
     max-width: 85%;
-    padding: 2%;
-    
+    padding: 2%;   
 }
 .featureImgTxt{
    margin: auto;
@@ -53,10 +51,8 @@ body {
     text-align: justify;
     margin: 0 3% 0 0;
 }
-
 .featureBtn {
-    display: inline-block;
-    
+    display: inline-block;  
 }
 .featuredBox {
     columns: 3;
@@ -93,8 +89,65 @@ body {
 }
 
 /* DETAIL PAGE */
-
 .detailImg {
     max-width: 100%;
     border-radius: 5%;
 }
+
+/* BLOG INDEX */
+.blogIndexTopBox {
+    display: inline-block;
+}
+.blogIndexImg {
+    max-width: 85%;
+    padding: 2%;
+}
+.blogIndexImgTxt{
+    margin: auto;
+     font-size: 8pt;
+     color:rgb(183, 181, 181);
+     padding: 0;
+ }
+ .blogIndexTextBox {
+     display: block;
+     text-align: left;
+ }
+ .blogIndexTitle {
+     text-align: right;
+     margin: 0;
+ }
+ /* BLOG DETAIL*/
+ .blogDetailText {
+    margin: auto;
+    word-wrap: break-word;
+    max-width: 90%;
+    text-align: justify;
+  }
+  .blogPost-detail-btn-group {
+    display: inline-flex;
+    margin: auto;
+    list-style: none;
+    text-decoration: none;
+  }
+  .btn:link, .btn:active, .btn:visited {
+    text-decoration: none;
+  }
+  .btn:hover {
+    background-color: #d4cae1;
+    transition: 0.5s ease-out;
+}
+  .blogDetailImgTxt {
+    text-align: right;
+    margin: auto;
+    font-size: 8pt;
+    color:rgb(183, 181, 181);
+    padding: 1% 3% 0 0;
+ }
+ .blogDetailTitle {
+    text-align: center;
+    
+ }
+ .detailImg {
+    max-width: 100%;
+ }
+ 

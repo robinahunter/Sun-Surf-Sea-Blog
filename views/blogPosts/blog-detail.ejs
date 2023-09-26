@@ -11,30 +11,53 @@
         <%- include('./partials/nav.ejs') %>
             <div class="titleBox d-flex">
                 <div class="featureTopBox d-flex col-12">
-                <div class="featureTextBox col-12">
-                    <h2 class="homeTitle"><%= blogPost.headline %></h2>
-                    <br>
-                    <img class="detailImg" src="<%= blogPost.image %>" alt="img"></a>
-                    <br>
-                    <br>
-                    <p><%= blogPost.article %> </p>
-                    
-                    <br>
-                    <p><strong>Reviews: </strong></p>
-                   
-                    
-                    
-        
-                    <div class="product-detail-btn-group">
-                        <button class="btn btn-primary btn-dark btn-sm px-3 me-md-4"><a href="/blogPosts/<%= blogPost._id %>/edit" class="btn">UPDATE</a></button>  
+                    <div class="featureTextBox col-12">
+                        <img class="detailImg" src="<%= blogPost.image %>" alt="img"></a>
+                        <p class="blogDetailImgTxt"><%= blogPost.imageSource %></p>
+                        <br><br>
+                        <h2 class="blogDetailTitle"><%= blogPost.headline %></h2>
+                        <br><br>
+                        <p class="blogDetailText">
+                            <% for (let i = 0; i < blogPost.article.length; i++) { %>
+                              <%= blogPost.article[i] %>
+                              <% if (i < blogPost.article.length - 1) { %> 
+                                <br><br> <!-- Add space  -->
+                              <% } %>
+                            <% } %>
+                          </p>
+                        <br><br><br>
+                    <div class="blogPost-detail-btn-group">
+                        <a href="/blogPosts/<%= blogPost._id %>/edit" class="btn btn-outline-secondary btn-sm px-3 me-md-2">UPDATE</a> 
                         <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=DELETE">
-                        <input class="btn" type="submit" value="DELETE"/></form> 
-                        <button class="btn"><a href="/reviews/new-review/<%= blogPost._id %>" class="btn">REVIEW</a></button>
+                        <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="DELETE"/></form> 
+                        <a href="/reviews/new-review/<%= blogPost._id %>" class="btn btn-outline-secondary btn-sm px-3 me-md-2">REVIEW</a>
+                    </div>
+                    <br><br>
+                        <p><strong>Reviews: </strong></p>
                     </div>
                 </div>
-            </div>
-            <br>
-        </div>    
+                <br>
+            </div>    
+        </div>
+        <script>let p = document.querySelector('p');
+            p.innerHTML = '' + p.innerHTML.split(' ').join(' ') + ''; // add spans in b/w
+            
+            let spans = [...p.querySelectorAll('span')];
+            let initY = spans[0].offsetTop; // get the offsetTop for first line
+            
+            let lines = [''], idx = 0, i; 
+            for(i = 0; i < spans.length; i++) {
+              if(spans[i].offsetTop - initY > 2) {
+                initY = spans[i].offsetTop; // reset the Y
+                lines.push(''); // add starting of line
+                idx++; // move to next line
+              }
+              lines[idx] += spans[i].innerText; // add the text everytime
+            }
+            
+            let breaks = lines.map((val, idx) => [idx, val.length]);
+            // ^ get (row, col) pairs
+            console.log(breaks);</script>
     </body>
     <%- include('./partials/foot.ejs') %>  
 </html>
