@@ -2,54 +2,57 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'sun surf sea'}) %>
+    <%- include('./partials/head.ejs', {title: 'SunSurfSea | HOME'}) %>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 
 <body >
-    <div class="featureTopBox container-xxl px-md-5 bg-white">
-        <%- include('./partials/nav.ejs') %>
-     
-    <div class="titleBox d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4 border-bottom">
-        <div class="col-12 col-8 row-2">
-            <img src="https://i.postimg.cc/8znbZvRv/ruslan-bardash-unsplash.png" width="500 class=d-block mx-lg-auto img-fluid" Loading="lazy" alt="sun surf sea">
-    
-        <div class="col-7 row-2">
-            <h2 class="display-6 fw-bold mb-2">Uncharted Waters & Off the Beaten Path Adventures</h2>
-            <p class="lead">Come dive with us into the depths of the unknown, where the vast ocean becomes our canvas and life's greatest mysteries unfold. Join our Off the Beaten Path journey as we chart uncharted waters, exploring the ocean's hidden wonders and discovering the profound connection between the sea and the essence of life itself.</p>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start ">
-            <a href="/" class="btn btn-primary btn-dark btn-lg px-3 me-md-4">Explore</a>
-            <a href="/" class="btn btn-outline-secondary btn-lg px-3 me-md-2">Review</a>
-        </div>
-        <br><br>
-    </div>
-
-    <div>
-        <ul class="featured">         
-            <% for (let blogPost of blogPosts) { %>
-                <li>
-                <figure>
-                    <img class="featured" src="<%= blogPost.image %>" alt="img">
-                </figure>
-                <figcaption>
-                    <div>
-                        <br>
-                        <h5><%= blogPost.headline %></h5>
-                        <br>
-                        <a href="/blogPosts/<%= blogPost._id %>" class="btn">MORE</a>
-                    </div>
+<div class="Page container-xxl flex-container bg-white shadow-lg">
+    <%- include('./partials/nav.ejs') %>
+        <div class="titleBox d-flex">
+            <div class="featureTopBox d-flex col-12">
+            <div class="featureTextBox col-5">
+                <div class="homeTitle">
+                    <h2 class="homeTitle">Off the Beaten Path in Uncharted Waters</h2>
                     <br>
-                </figcaption>
-                </li>
-            <% } %>
-        </ul>   
-    </div>
+                    <p class="homeIntro">Come dive with us into the depths of the unknown, where the vast ocean becomes our canvas and life's greatest mysteries unfold. Join our Off the Beaten Path journey as we chart uncharted waters, exploring the ocean's hidden wonders and discovering the profound connection between the sea and the essence of life itself.</p>
+                </div>
+                <br>
+                <div class="featureBtn gap-2 justify-content-md-start ">
+                    <a href="/blogPosts/" class="btn btn-primary btn-dark btn-sm px-3 me-md-4">Explore</a>
+                    <a href="/reviews" class="btn btn-outline-secondary btn-sm px-3 me-md-2">Review</a>
+                </div>
+            </div> 
+                <div class="featureImg col-7 row-2">
+                    <img src="https://i.postimg.cc/Y9h7znVK/ruslan-bardash-unsplash-yellow.png" width="450" class="d-block mx-lg-auto img-fluid" Loading="lazy" alt="sun surf sea">
+                    <p class="featureImgTxt col-6 row-2">photo by ruslan bardash unsplash</p>
+                </div>
+                <br><br>
+            </div>
+        </div> 
 
-    </div>
+        <div class="featuredBox col-12">
+            <div class="featured">
+                <ul class="featured">         
+                    <% for (let blogPost of blogPosts) { %>
+                        <li>
+                            <a href="/blogPosts/<%= blogPost._id %>" class="featuredMoreImg"><img class="featuredMoreImg" src="<%= blogPost.image %>" alt="img"></a>
+                        </li>
+                        <br>
+                        <li>
+                            <h6 class="featuredMoreTitle"><%= blogPost.description %></h6>
+                        </li>
+                    <% } %>
+                </ul> 
+            </div>
+        </div>
+        <br><br><br>
+
     </div>
     <%- include('./partials/foot.ejs') %>
-</div>    
+   
 </body>
 
 </html>
+                      
+                             

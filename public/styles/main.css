@@ -5,25 +5,96 @@
 
 /* COLORS: Off-black: #414141, Cream: #f6ede3, Hibiscus #ecf8ba, Sea: #6ecbd2, Navy: #024468         */
 
+*{
+    margin: 0;
+
+}
 :root {
     --bs-font-sans-serif:'Ubuntu', sans-serif;
 
 }
 body {
-   background-image: url("https://i.postimg.cc/HjD6V0DV/Wave-Cream.png");
+    max-width: 900px;
+    margin: auto;
+    background-image: url("https://i.postimg.cc/HjD6V0DV/Wave-Cream.png");
 }
 
 /* HOME */
-.featured {
-    display: inline-flex;
-    border-radius: 11%;
-    max-width: 75%;
-    text-decoration: none;
-    list-style: none;
+.Page {
+    border-radius: 1%;
+    margin-top: 3%;
+
+}
+.featureTopBox {
+    display: block;
 }
 .titleBox {
-    max-width: 1320px;
+    max-width: 900px;
     background-color: white;
-    display: inline-flex;
     margin: auto;
+    padding: 5%;
+}
+.featureImg {
+    max-width: 85%;
+    padding: 2%;
+    
+}
+.featureImgTxt{
+   margin: auto;
+    font-size: 8pt;
+    color:rgb(183, 181, 181);
+    padding: 0 1%;
+}
+.featureTextBox {
+    display: block;
+    text-align: left;
+}
+.homeTitle {
+    text-align: justify;
+    margin: 0 3% 0 0;
+}
+
+.featureBtn {
+    display: inline-block;
+    
+}
+.featuredBox {
+    columns: 3;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto 0 5%;
+    overflow: hidden ellipsis;
+    white-space: nowrap;
+}
+.featured {
+    padding: 0;
+    border-radius: 11%;
+    height: 150px;
+    text-decoration: none;
+    list-style: none;
+    margin: auto;
+}
+.featuredMoreImg {
+    border-radius: 11%;
+    height: 150px;
+    text-decoration: none;
+    list-style: none;
+    margin: auto;
+    transition: 250ms ease-in-out;
+    object-fit: cover;
+}
+.featuredMoreTitle {
+    max-width: 33%;
+    overflow: hidden ellipsis;
+    white-space: nowrap;
+}
+.featuredMoreImg:hover {
+    transform: scale(1.1);
+}
+
+/* DETAIL PAGE */
+
+.detailImg {
+    max-width: 100%;
+    border-radius: 5%;
 }

@@ -2,35 +2,41 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'SUN SURF SEA'}) %>
+    <%- include('./partials/head.ejs', {title: 'SunSurfSea | ABOUT'}) %>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/about.css">
 </head>
 
 <body>
+    <div class="Page container-xxl flex-container bg-white shadow-lg">
     <%- include('./partials/nav.ejs') %>
+        <div class="titleBox d-flex">
+            <div class="featureTopBox d-flex col-12">
+            <div class="featureTextBox col-7">
+                <div class="homeTitle">
+                    <h2 class="homeTitle">About</h2>
+                    <br>
+                    <p class="homeIntro">Welcome to Sun Surf Sea, a sanctuary for those who dare to venture beyond the ordinary, into the realm where the ocean and the essence of life intertwine. Here, we embark on a transformative journey, both through the depths of the vast ocean and into the uncharted territories of our existence.</p>
+                    <br>
+                    <p class="homeIntro">We're not just about travel; we're about exploration with a purpose. Our mission is to inspire and empower adventurers, ocean enthusiasts, and life seekers to dive headfirst into the extraordinary. We believe that the ocean, with its immense beauty and power, serves as a mirror reflecting the lessons of life itself. We are committed to sharing these insights with you, whether you're a seasoned traveler or just dipping your toes into the world of exploration.</p>
+                    <br>
+                    <p class="homeIntro">Whether you're seeking travel inspiration, eager to explore the ocean's hidden treasures, or simply yearning for a deeper understanding of life's enigmatic ways, we hope you will find something here that will inspire you. </p>
+                </div>
+                <br>
 
-    <main>
-      
-                <h2 class="">About</h2>
-                <p>Welcome to our oasis.</p>
-
-                <p>We are more than just a substance.</p> 
-                
-                <p>Our carefully designed space, you will discover a sleek, premium higher standard.</p>
-                
-                <p>But we are more than just a showroom of exquisite rejuvenation and 
-                    exceptional taste.</p>
-                
-                
-        </section>
-        
-        <a href="/" class="btn">HOME</a>
-        <br>
-        </section>
-    </main>
-    <br>
+                <div class="featureBtn gap-2 justify-content-md-start ">
+                    <a href="/blogPosts/" class="btn btn-primary btn-dark btn-sm px-3 me-md-4">Explore</a>
+                </div>
+            </div> 
+                <div class="featureImg col-5 row-2">
+                    <img src="https://i.postimg.cc/j2rbxKxx/h-ng-nguy-unsplash.png" width="450" class="d-block mx-lg-auto img-fluid" Loading="lazy" alt="sun surf sea">
+                    <p class="featureImgTxt col-6 row-2">photo by h ng nguy unsplash</p>
+                </div>    
+            </div>
+        </div>
+    </div>    
     <%- include('./partials/foot.ejs') %>
-</body>
-
-</html>
+       
+    </body>
+    
+    </html>

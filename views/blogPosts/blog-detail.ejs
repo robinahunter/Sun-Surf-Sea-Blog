@@ -2,26 +2,39 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: `SUN SURF SEA`}) %>
+    <%- include('./partials/head.ejs', {title: `SunSurfSea | DETAIL`}) %>
     <link rel="stylesheet" href="/styles/main.css">
-</head>
-
-<body>
-    <%- include('./partials/nav.ejs') %>
-
-   <main>
-    <h1>Blog Details Page</h1>
-
-    <section class="">
-        <button class=""><a href="/blogPosts/<%= blogPost._id %>/edit">Edit</a></button>
-        <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=DELETE">
-            <input class="" type="submit" value="Delete" />
-        </form>
-    </section>
+</head> 
     
-   </main>
-
-    <%- include('./partials/foot.ejs') %>
-</body>
-
+    <body>
+        <div class="Page container-xxl flex-container bg-white shadow-lg">
+        <%- include('./partials/nav.ejs') %>
+            <div class="titleBox d-flex">
+                <div class="featureTopBox d-flex col-12">
+                <div class="featureTextBox col-12">
+                    <h2 class="homeTitle"><%= blogPost.headline %></h2>
+                    <br>
+                    <img class="detailImg" src="<%= blogPost.image %>" alt="img"></a>
+                    <br>
+                    <br>
+                    <p><%= blogPost.article %> </p>
+                    
+                    <br>
+                    <p><strong>Reviews: </strong></p>
+                   
+                    
+                    
+        
+                    <div class="product-detail-btn-group">
+                        <button class="btn btn-primary btn-dark btn-sm px-3 me-md-4"><a href="/blogPosts/<%= blogPost._id %>/edit" class="btn">UPDATE</a></button>  
+                        <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=DELETE">
+                        <input class="btn" type="submit" value="DELETE"/></form> 
+                        <button class="btn"><a href="/reviews/new-review/<%= blogPost._id %>" class="btn">REVIEW</a></button>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>    
+    </body>
+    <%- include('./partials/foot.ejs') %>  
 </html>
