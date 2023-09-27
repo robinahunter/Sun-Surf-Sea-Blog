@@ -8,18 +8,52 @@
 
 <body>
     <%- include('./partials/nav.ejs') %>
-
+    <br>
+<br>
+<div class="reviewImg">
+    <img class="reviewImg"  src="<%= blogPost.image %>" alt="item for sale" width="50%">
+    <p class="reviewImgTxt"><%= blogPost.imageSource %></p>
+</div>
+    <br>
+    <h3 class="reviewImg"><%= blogPost.headline %></h3>
+    <br>
+    <h4 class="homeTitle">Edit Blog Post:</h4>
 
     <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=PUT">
+        <!-- FORM INPUT to UPDATE BLOG POST -->
+        <label for="authorName">Author:</label>
+        <input class="input" type="text" id="authorName" name="authorName" required>
+        <br>
 
-        <!-- Sample form input entry /ensure name field matches schema -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="<%= blogPost.headline %>" required>
-       
-        <input type="submit" value="Edit Blog">
+        <label for="headline">Title:</label>
+        <input class="input" type="text" id="headline" name="headline" required>
+        <br>
+
+        <label for="article">Story:</label>
+        <input class="input" type="text" id="article" name="article" required>
+        <br>
+        
+        <label for="topic">Topic:</label>
+        <input class="input" type="text" id="topic" name="topic" required>
+        <br>
+
+        <label for="image">Image URL:</label>
+        <input class="input" type="text" id="image" name="image" required>
+        <br>
+
+        <label for="imageSource">Image Source:</label>
+        <input class="input" type="text" id="imageSource" name="imageSource" required>
+        <br>
+        
+        <label for="description">Short Description:</label>
+        <input class="input" type="text" id="description" name="description" required>
+        <br><br>
+        
+        <input type="submit" value="EDIT">
     </form>
-
+    <br><br><br><br>
     <%- include('./partials/foot.ejs') %>
 </body>
 
 </html>
+

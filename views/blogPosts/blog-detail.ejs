@@ -30,34 +30,27 @@
                         <a href="/blogPosts/<%= blogPost._id %>/edit" class="btn btn-outline-secondary btn-sm px-3 me-md-2">UPDATE</a> 
                         <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=DELETE">
                         <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="DELETE"/></form> 
-                        <a href="/reviews/new-review/<%= blogPost._id %>" class="btn btn-outline-secondary btn-sm px-3 me-md-2">REVIEW</a>
+                        <a href="/reviews/new/<%= blogPost._id %>" class="btn btn-outline-secondary btn-sm px-3 me-md-2">REVIEW</a>
                     </div>
                     <br><br>
+                    <div>
                         <p><strong>Reviews: </strong></p>
+                        <% if (blogPost.reviews.length > 0) { %>
+                            <% blogPost.reviews.forEach(function(review) { %>
+                                <p><strong>Rating: </strong><%= review.reviewRating %></p>
+                                <p><strong></strong><%= review.reviewDescription %></p>
+                                <p><%= review.reviewName %> | <%= review.reviewEmail %> | <%= review.reviewDate %></p>
+                            <% }); %>
+                        <% } %>
+                        
+                         
+                    </div>    
                     </div>
                 </div>
                 <br>
             </div>    
         </div>
-        <script>let p = document.querySelector('p');
-            p.innerHTML = '' + p.innerHTML.split(' ').join(' ') + ''; // add spans in b/w
-            
-            let spans = [...p.querySelectorAll('span')];
-            let initY = spans[0].offsetTop; // get the offsetTop for first line
-            
-            let lines = [''], idx = 0, i; 
-            for(i = 0; i < spans.length; i++) {
-              if(spans[i].offsetTop - initY > 2) {
-                initY = spans[i].offsetTop; // reset the Y
-                lines.push(''); // add starting of line
-                idx++; // move to next line
-              }
-              lines[idx] += spans[i].innerText; // add the text everytime
-            }
-            
-            let breaks = lines.map((val, idx) => [idx, val.length]);
-            // ^ get (row, col) pairs
-            console.log(breaks);</script>
+
     </body>
     <%- include('./partials/foot.ejs') %>  
 </html>

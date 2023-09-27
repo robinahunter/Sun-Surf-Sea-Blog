@@ -4,6 +4,8 @@
 /*   font-family: 'Dancing Script', cursive;        */
 
 /* COLORS: Off-black: #414141, Cream: #f6ede3, Hibiscus #ecf8ba, Sea: #6ecbd2, Navy: #024468         */
+/* CSS style resources: */
+/* 'Build a Recipe Blog using Node.js and MongoDB (Express, EJS, Mongoose & more...) CRUD' https://www.youtube.com/watch?v=OEdPH4fV7vY  */
 
 *{
     margin: 0;
@@ -61,6 +63,7 @@ body {
     margin: 0 auto 0 5%;
     overflow: hidden ellipsis;
     white-space: nowrap;
+    word-wrap: break-word;
 }
 .featured {
     padding: 0;
@@ -88,13 +91,19 @@ body {
     transform: scale(1.1);
 }
 
-/* DETAIL PAGE */
-.detailImg {
-    max-width: 100%;
-    border-radius: 5%;
-}
-
 /* BLOG INDEX */
+.indexBox {
+    display:flexbox;
+    flex-direction: row 2; 
+    
+    columns: 3;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto 0 5%;
+    overflow: hidden ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
 .blogIndexTopBox {
     display: inline-block;
 }
@@ -144,10 +153,32 @@ body {
     padding: 1% 3% 0 0;
  }
  .blogDetailTitle {
-    text-align: center;
-    
+    text-align: center; 
  }
  .detailImg {
     max-width: 100%;
+    border-radius: 5%;
+    margin: auto;
  }
- 
+ /* REVIEW PAGE */
+ .reviewImgTxt {
+    text-align: center;
+    margin: auto;
+    font-size: 8pt;
+    color:rgb(183, 181, 181);
+    padding: 0;
+ }
+ .reviewImg {
+    text-align: center;
+    max-width: 100%;
+    border-radius: 5%;
+    margin: auto;
+ }
+ .input {
+    font-family: 'Ubuntu', sans-serif; 
+    width: 100%;
+    padding: 8px 6px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    color: #1c2124;
+}

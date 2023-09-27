@@ -8,36 +8,41 @@
 
 <body>
     <%- include('./partials/nav.ejs') %>
-    <h1> NEW BLOG POST</h1>
+    <h2 class="homeTitle"> New Blog Post</h2>
+    <br><br>
     <form method="POST" action="/blogPosts">
         <!-- FORM INPUT NEW BLOG POST -->
         <label for="authorName">Author:</label>
-        <input type="text" id="authorName" name="authorName" required>
+        <input class="input" type="text" id="authorName" name="authorName" required>
         <br>
 
         <label for="headline">Title:</label>
-        <input type="text" id="headline" name="headline" required>
+        <input class="input" type="text" id="headline" name="headline" required>
         <br>
 
         <label for="article">Story:</label>
-        <input type="text" id="article" name="article" required>
+        <input class="input" type="text" id="article" name="article" required>
         <br>
         
         <label for="topic">Topic:</label>
-        <input type="text" id="topic" name="topic" required>
+        <input class="input" type="text" id="topic" name="topic" required>
         <br>
 
         <label for="image">Image URL:</label>
-        <input type="text" id="image" name="image" required>
+        <input class="input" type="text" id="image" name="image" required>
+        <br>
+
+        <label for="imageSource">Image Source:</label>
+        <input class="input" type="text" id="imageSource" name="imageSource" required>
         <br>
         
         <label for="description">Short Description:</label>
-        <input type="text" id="description" name="description" required>
-        <br><br><br><br>
+        <input class="input" type="text" id="description" name="description" required>
+        <br><br>
         
-        <input type="submit" value="Create Blog">
+        <input type="submit" value="CREATE">
     </form>
-
+    <br><br><br><br>
     <%- include('./partials/foot.ejs') %>
 </body>
 

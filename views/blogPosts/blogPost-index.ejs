@@ -13,7 +13,7 @@
                 <div class="blogIndexTopBox d-flex col-12">
                     <div class="blogIndexImg">
                         <img src="https://i.postimg.cc/J4HRbTgC/jack-ward-unsplash.png" width="450" class="d-block mx-lg-auto img-fluid" Loading="lazy" alt="sun surf sea">
-                        <p class="blogIndexImgTxt">photo by jack ward unsplash</p>
+                        <p class="blogIndexImgTxt">photo by jack ward, unsplash</p>
                     </div>
                     <div class="blogIndexTextBox">
                         <br><br><br>
@@ -29,7 +29,7 @@
                 </div>
             </div> 
     
-            <div class="featuredBox col-12">
+            <div class="indexBox col-12">
                 <div class="featured">
                     <ul class="featured">         
                         <% for (let blogPost of blogPosts) { %>
@@ -39,9 +39,11 @@
                             <br>
                             <li>
                                 <h6 class="featuredMoreTitle"><%= blogPost.description %></h6>
+                                <br>
                             </li>
                         <% } %>
                     </ul> 
+                    
                 </div>
             </div>
             <br><br><br>

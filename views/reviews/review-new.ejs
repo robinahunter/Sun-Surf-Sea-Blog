@@ -9,50 +9,39 @@
 
 <body>
     <%- include('./partials/nav.ejs') %>
-    <br>
-    <br>
-    <br>
-    <div>
-        <h2>NEW REVIEW</h2>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="detail-box"></div>
-    <figure>
-        <img class="detailImg" src="<%= blogPost.image %>" alt="blog image">
-    </figure>
-        <br>
-        <h1><%= blogPost.headline %></h1>
-        <br>
-    </div> 
+<br>
+<br>
+<div class="reviewImg">
+    <img class="reviewImg"  src="<%= blogPost.image %>" alt="item for sale" width="50%">
+    <p class="reviewImgTxt"><%= blogPost.imageSource %></p>
+</div>
+<br>
+<h3 class="reviewImg"><%= blogPost.headline %></h3>
+<br>
+<h4 class="homeTitle">Leave a Review:</h4>
+<br><br>
+    
     <form action="/reviews/create/<%= blogPost._id %>" method="POST">
-
-        <label for="reviewName">Name:</label> 
+        <!-- FORM INPUT NEW BLOG POST -->
+        <label for="reviewName">Name:</label>
         <input class="input" type="text" id="reviewName" name="reviewName" required>
         <br>
+
+        <label for="reviewEmail">Email:</label>
+        <input class="input" type="text" id="reviewEmail" name="reviewEmail" required>
         <br>
-       
-        <label for="reviewEmail">Email:</label> 
-        <input class="input" type="text" id="reviewEmail" name="reviewEmail" required>  
-        <br>
-        <br>
-   
+
         <label for="reviewRating">Rating:</label>
         <input class="input" type="number" id="reviewRating" name="reviewRating" required>
         <br>
-        <br>
-   
-        <label for="reviewDescription">Description:</label>
-        <input class="input" type="text" id="reviewDescription" name="reviewDescription" required>
-        <br>
-        <br>
         
-        <input class="btn" type="submit" value="NEW">
+        <label for="reviewDescription">Description:</label>
+        <input class="input" type="text" id="topic" name="topic" required>
         <br>
-        <br>
-        <br>
-        <br>
+
+        <br><br>
+        <input type="submit" value="SUBMIT">
+        <br><br><br>
     </form>
 
     <%- include('./partials/foot.ejs') %>

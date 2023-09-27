@@ -9,3 +9,15 @@
     featured: { type: Boolean, default: false },
     datePublished: "2022-11-01T10:00:00.000Z"
 },
+
+{
+    authorName: ``,
+    headline: ``,
+    article: [``],
+    topic: { type: String, enum: ['Travel', 'Living', 'Surfing', 'Paddling', 'Snorkeling', 'Wind', 'Swimming'], required: true },
+    image: ``,
+    imageSource: `photo by andrea davis, unsplash`,
+    description: ``,
+    featured: false ,
+    datePublished: ``
+},

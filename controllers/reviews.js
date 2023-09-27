@@ -40,7 +40,7 @@ router.post('/create/:blogPostId', (req, res) => {
         { $push: { reviews: req.body } },
         { new: true }
     )
-        .then(blogPost => res.redirect('reviews/blogPosts/' + blogPost._id))
+        .then(blogPost => res.redirect('/blogPosts/' + blogPost._id))
 });
 
 // Show Route: GET localhost:3000/reviews/:id
