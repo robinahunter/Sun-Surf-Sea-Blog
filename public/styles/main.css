@@ -21,6 +21,31 @@ body {
     background-image: url("https://i.postimg.cc/HjD6V0DV/Wave-Cream.png");
 }
 
+/*---NavBar---*/
+.hamburger, .navBar {
+    display: none;
+    cursor: pointer;
+}
+.bar {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 10px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color:#024468 ;
+}
+.hamburger:hover {
+    text-shadow: 0 0 7px #024468;
+    text-shadow: 0 0 10px #024468;  
+}
+.nav-link {
+    color:#024468;
+   }
+.nav-link:hover {
+    color: #6ecbd2;
+    transition: 0.5s ease-out;
+   }
 /* HOME */
 .Page {
     border-radius: 1%;
@@ -121,7 +146,6 @@ body {
     color:rgb(183, 181, 181);
     padding: 0 1%;
 }
-
 
 /* BLOG INDEX */
 .indexBox {
@@ -274,6 +298,73 @@ body {
 /*-------- MEDIA QUERY -------*/
 
 @media (max-width: 768px) {
+    /*----NAV BAR----*/
+    .navMainImg {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        float: right;
+        text-align: right;  
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(13px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-13px) rotate(-45deg);
+    }
+    .navBar {
+        display: block;
+        float: right;
+    }
+    .navBarImg {
+        display: block;
+        width: 40px;
+        float: left;
+    }
+    .hamburger:hover {
+        text-shadow: 0 0 7px #6ecbd2;
+        text-shadow: 0 0 10px white;  
+        transition: 0.5s ease-out;
+    }
+    .navMain {
+        color:#024468;
+       }
+    .navMain:hover {
+        color: #6ecbd2;
+        transition: 0.5s ease-out;
+       }
+
+    .navMain {
+        position:relative;
+        right: -100%;
+        top: 7px;
+        gap: 0;
+        background-color: white;
+        color:#024468;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        float: right;
+        text-align: right;
+        transition: 0.3s;
+        z-index: 1; /* set higher z-index value */ 
+    }
+    .navMain.active {
+        right: 0;
+    }
+    .navMain:link, .navMain:active, .navMain:visited { 
+        text-decoration: none; 
+        color:#024468;
+    }
+    .navMain:hover {
+        color: #ff8271;   
+    }
+
     /*----HOME PAGE----*/
     body {
         display: flex;

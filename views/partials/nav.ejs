@@ -1,19 +1,48 @@
- 
-        <header class="d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img src="https://i.postimg.cc/SxRJgK4X/sun-surf-sea-LOGO4.png" width="225" alt="sun surf sea">
-            </a>    
-                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="/" class="nav-link px-2 link-secondary">HOME</a></li>
-                    <li><a href="/blogPosts" class="nav-link px-2 link-secondary">EXPLORE</a></li>
-                    <li><a href="/about" class="nav-link px-2 link-secondary">ABOUT</a></li>
-                    <li><a href="/blogPosts/new" class="nav-link px-2 link-secondary">SUBMIT</a></li>
-                </ul>
 
-                <div class="col-md-3 text-end">
-                    <form method="POST" action="/blogPosts/search">
-                        <input type="search" name="search" class="form-control" placeholder="Search..." aria-Label="Search">
-                    </form>
-                </div>
-        </header>
+<header class="d-flex flex-wrap align-items-center justify-content-md-between py-3 mb-4 border-bottom">
 
+    <div class="navBar col-12 row-1"> 
+        <a href="/" class="navBarImg d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="https://i.postimg.cc/zXjt4ddP/sun-surf-sea-sq-LOGO2.png" width="225" alt="sun surf sq">
+        </a> 
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+
+    <a href="/" class="navMainImg d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <img src="https://i.postimg.cc/SxRJgK4X/sun-surf-sea-LOGO4.png" class="navMainImg" width="225" alt="sun surf sea">
+    </a> 
+    <div class="navMain col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/" class="nav-link px-2">HOME</a></li>
+            <li><a href="/blogPosts" class="nav-link px-2">EXPLORE</a></li>
+            <li><a href="/about" class="nav-link px-2">ABOUT</a></li>
+            <li><a href="/blogPosts/new" class="nav-link px-2">SUBMIT</a></li>
+        </ul>
+    </div>
+
+    <div class="col-md-3 text-end">
+        <form method="POST" action="/blogPosts/search">
+            <input type="search" name="search" class="form-control" placeholder="Search..." aria-Label="Search">
+        </form>
+    </div>
+
+</header>
+
+<script>
+const hamburger = document.querySelector(".hamburger");
+    const navMain = document.querySelector(".navMain");
+    
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMain.classList.toggle("active");
+    })
+    
+    document.querySelectorAll(".navMain").forEach(n => n.
+       addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMain.classList.remove("active");
+       }))</script>
