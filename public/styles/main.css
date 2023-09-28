@@ -158,6 +158,10 @@ body {
      margin: 0;
  }
  /* BLOG DETAIL*/
+ .detailPage {
+    border-radius: 1%;
+    margin-top: 3%;
+}
  .detailTitleBox {
      max-width: 900px;
      background-color: white;
@@ -201,6 +205,10 @@ body {
     border-radius: 5%;
     margin: auto;
  }
+ .detailTextBox {
+    display: block;
+    text-align: left;
+}
  /* REVIEW PAGE */
  .reviewImgTxt {
     text-align: center;
@@ -444,18 +452,36 @@ body {
     }
 
     /*---DETAIL PAGE---*/
+    .detailPage {
+        display: block;
+        columns: 1;
+        width: 100%;
+        border-radius: 1%;
+        margin-top: 3%;
+    }
     .detailImg {
         max-width: 100%;
         border-radius: 5%;
         margin: 0;
      }
      .detailTitleBox {
-        max-width: 100%;
+        display: block;
+        columns: 1;
+        width: 100%;
         background-color: white;
-        margin: auto;
+        margin: 0;
         padding: 0;
     }
     .detailTopBox {
-       display: block;
+        display: block;
+        columns: 1;
+        width: 100%;
    }
+   .detailTextBox {
+    display: block;
+    columns: 1;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
 }

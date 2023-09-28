@@ -7,29 +7,28 @@
 </head> 
     
     <body>
-        <div class="Page container-xxl flex-container bg-white shadow-lg">
+        <div class='detailPage container-xxl  bg-white shadow-lg'>
             <%- include('partials/nav.ejs') %>
-            <div class="detailTitleBox d-flex">
-                <div class="detailTopBox d-flex col-12">
-                    <div class="featureTextBox col-12">
-                        <img class="detailImg" src="<%= blogPost.image %>" alt="img"></a>
-                        <p class="blogDetailImgTxt"><%= blogPost.imageSource %></p>
-                        <br><br>
-                        <h2 class="blogDetailTitle"><%= blogPost.headline %></h2>
-                        <br><br>
-                        <p class="blogDetailTitle"><strong><%= blogPost.authorName %>  |  <%= blogPost.datePublished.toDateString() %></strong></p>
-                        <p class="blogDetailText">
+            <div class="detailTitleBox">
+                <div class='detailTopBox col-12">
+                    <div class="featureTextBox col-12'>
+                        <img class='detailImg' src='<%= blogPost.image %>' alt='img'></a>
+                        <p class='blogDetailImgTxt'><%= blogPost.imageSource %></p>
+                    <br>
+                        <h2 class='blogDetailTitle'><%= blogPost.headline %></h2>
+                    <br>
+                        <p class='blogDetailTitle'><strong><%= blogPost.authorName %>  |  <%= blogPost.datePublished.toDateString() %></strong></p>
+                        <p class='blogDetailText'>
                             <% for (let i = 0; i < blogPost.article.length; i++) { %>
                               <%= blogPost.article[i] %>
                               <% if (i < blogPost.article.length - 1) { %> 
-                                <br><br> <!-- Add space  -->
-
+                            <br><br>
                               <% } %>
                             <% } %>
                           </p>
                         <br><br><br>
-                    <div class="blogPost-detail-btn-group">
-                        <a href="/blogPosts/<%= blogPost._id %>/edit" class="btn btn-outline-secondary btn-sm px-3 me-md-2">Update</a> 
+                    <div class='blogPost-detail-btn-group'>
+                        <a href='/blogPosts/<%= blogPost._id %>/edit' class='btn btn-outline-secondary btn-sm px-3 me-md-2'>Update</a> 
                         <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=DELETE">
                         <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="Delete"/></form> 
                         <a href="/reviews/new/<%= blogPost._id %>" class="btn btn-outline-secondary btn-sm px-3 me-md-2">Review</a>
