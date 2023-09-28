@@ -61,6 +61,29 @@ router.put('/:id', (req, res) => {
     .then(blogPost => res.redirect('/blogPosts/' + blogPost._id))
 });
 
+//ChatGBT helped resolve issues on this route:
+// Search page route - will return blog posts that match search query
+router.post('/search', (req, res) => {
+    const searchQuery = req.body.search;
+
+    // Use a regular expression to perform a case-insensitive search
+    const searchRegex = new RegExp(searchQuery, 'i');
+
+        //modify the MongoDB query to find blog posts that match either the title or the content field using the $or operator.
+    db.BlogPost.find({ $or: [{ topic: searchRegex }, { headline: searchRegex }, { article: searchRegex }] })
+        .then(blogPosts => {
+            res.render('blogPosts/search', {
+                blogPosts: blogPosts,
+                search: searchQuery // Send the search query back to the view for display
+            });
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).send('Internal Server Error');
+        });
+});
+
+
 //Destroy route
 router.delete('/:id', (req, res) => {
     db.BlogPost.findByIdAndRemove(req.params.id)

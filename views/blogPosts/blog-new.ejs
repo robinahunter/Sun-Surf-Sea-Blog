@@ -7,9 +7,10 @@
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <%- include('partials/nav.ejs') %>
     <h2 class="homeTitle"> New Blog Post</h2>
     <br><br>
+<div class="newBlogForm">
     <form method="POST" action="/blogPosts">
         <!-- FORM INPUT NEW BLOG POST -->
         <label for="authorName">Author:</label>
@@ -40,8 +41,9 @@
         <input class="input" type="text" id="description" name="description" required>
         <br><br>
         
-        <input type="submit" value="CREATE">
+        <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="CREATE">
     </form>
+</div>
     <br><br><br><br>
     <%- include('./partials/foot.ejs') %>
 </body>

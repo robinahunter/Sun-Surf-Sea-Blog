@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: `SunSurfSea | DETAIL`}) %>
+    <%- include('partials/head.ejs', {title: `SunSurfSea | DETAIL`}) %>
     <link rel="stylesheet" href="/styles/main.css">
 </head> 
     
     <body>
         <div class="Page container-xxl flex-container bg-white shadow-lg">
-        <%- include('./partials/nav.ejs') %>
+            <%- include('partials/nav.ejs') %>
             <div class="titleBox d-flex">
                 <div class="featureTopBox d-flex col-12">
                     <div class="featureTextBox col-12">
@@ -17,20 +17,22 @@
                         <br><br>
                         <h2 class="blogDetailTitle"><%= blogPost.headline %></h2>
                         <br><br>
+                        <p class="blogDetailTitle"><strong><%= blogPost.authorName %>  |  <%= blogPost.datePublished.toDateString() %></strong></p>
                         <p class="blogDetailText">
                             <% for (let i = 0; i < blogPost.article.length; i++) { %>
                               <%= blogPost.article[i] %>
                               <% if (i < blogPost.article.length - 1) { %> 
                                 <br><br> <!-- Add space  -->
+
                               <% } %>
                             <% } %>
                           </p>
                         <br><br><br>
                     <div class="blogPost-detail-btn-group">
-                        <a href="/blogPosts/<%= blogPost._id %>/edit" class="btn btn-outline-secondary btn-sm px-3 me-md-2">UPDATE</a> 
+                        <a href="/blogPosts/<%= blogPost._id %>/edit" class="btn btn-outline-secondary btn-sm px-3 me-md-2">Update</a> 
                         <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=DELETE">
-                        <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="DELETE"/></form> 
-                        <a href="/reviews/new/<%= blogPost._id %>" class="btn btn-outline-secondary btn-sm px-3 me-md-2">REVIEW</a>
+                        <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="Delete"/></form> 
+                        <a href="/reviews/new/<%= blogPost._id %>" class="btn btn-outline-secondary btn-sm px-3 me-md-2">Review</a>
                     </div>
                     <br><br>
                     <div>
@@ -39,7 +41,8 @@
                             <% blogPost.reviews.forEach(function(review) { %>
                                 <p><strong>Rating: </strong><%= review.reviewRating %></p>
                                 <p><strong></strong><%= review.reviewDescription %></p>
-                                <p><%= review.reviewName %> | <%= review.reviewEmail %> | <%= review.reviewDate %></p>
+                                <p><%= review.reviewName %> | <%= review.reviewEmail %> | <%= review.reviewDate.toDateString() %></p>
+                                <a href="/reviews/<%= review._id %>" class="btn btn-outline-secondary btn-sm px-3 me-md-2">DETAILS</a>
                             <% }); %>
                         <% } %>
                         

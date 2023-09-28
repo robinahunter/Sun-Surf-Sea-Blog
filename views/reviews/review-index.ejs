@@ -12,9 +12,10 @@
     <main>
     <br>
         <section >
-            <h2>REVIEW INDEX</h2>
+            <h2>Reviews</h2>
             <br>
             <div class="index-box">
+                
                 <ul class="index">         
                     <% for (let review of reviews) { %>
                         <li>
@@ -24,9 +25,9 @@
                                 <br>
                                 <h3><%= review.reviewName %>  |  <%= review.reviewEmail %></h3>
                                 <br>
-                                <p>DATE: $<%= review.reviewDate %> </p>
-                                <p>RATING:<%= review.reviewRating %> </p>
-                                <a href="/reviews/<%= review._id %>" class="btn">DETAILS</a>
+                                <p><strong> DATE: </strong> <%= review.reviewDate.toDateString() %> </p>
+                                <p><strong>RATING: </strong><%= review.reviewRating %> </p>
+                                <a href="/reviews/<%= review._id %>" class="btn btn-outline-secondary btn-sm px-3 me-md-2">DETAILS</a>
                             </div>
                             <br>
                         </figcaption>
@@ -40,5 +41,11 @@
 
     <%- include('./partials/foot.ejs') %>
 </body>
-
+<script>d
+    function reviewDate(date) {
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      return new Date(date).toLocaleDateString(undefined, options);
+    }
+    reviewDate();
+  </script>
 </html>

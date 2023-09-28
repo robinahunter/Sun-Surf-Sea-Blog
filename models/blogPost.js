@@ -1,6 +1,7 @@
 // Require Mongoose package
 const mongoose = require('mongoose');
-const reviewSchema = require('./review.js')
+const reviewSchema = require('./review.js');
+const { BlogPost } = require('./index.js');
 
 // Schema to define the properties of blog posts
 const blogPostSchema = new mongoose.Schema({
@@ -15,6 +16,8 @@ const blogPostSchema = new mongoose.Schema({
     datePublished: { type: Date, default: Date.now },
     reviews: [reviewSchema]
 });
+
+// blogPostSchema.index({ headline: 'text', article: 'text' });
 
 // Export schema as a Monogoose model that will be accessed in models/index.js
 module.exports = mongoose.model('BlogPost', blogPostSchema);

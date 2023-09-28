@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'SunSurfSea | SEARCH'}) %>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body >
+    <div class="Page container-xxl flex-container bg-white shadow-lg">
+        <%- include('./partials/nav.ejs') %>
+            <div class="titleBox">
+                <div class="topBoxcol-12">   
+                    <div class="searchTitle">
+                        <h2 class="searchTitle col-12">Search Results for "<%= search %>"</h2>
+                    <br><br>
+                    </div>
+                    <div class="searchBox d-flex col-12">
+                    <% if (blogPosts.length === 0) { %>
+                        <p>No matching results found.</p>
+                    <% } else { %>
+                        <ul class="results"> 
+                        <% blogPosts.forEach(blogPost => { %>
+                        <li>
+                            <br><br>
+                            <a href="/blogPosts/<%= blogPost._id %>" class="featuredMoreImg"><img class="featuredMoreImg" src="<%= blogPost.image %>" alt="img"></a>
+                            <br>
+                            <h6 class="featuredMoreTitle"><%= blogPost.description %></h6>
+                        </li>
+                        <% }); %>
+                        </ul> 
+                    </div>
+                    <% } %>
+                </div>
+            </div> 
+        </div>
+        <%- include('./partials/foot.ejs') %>
+       
+    </body> 
+    </html>

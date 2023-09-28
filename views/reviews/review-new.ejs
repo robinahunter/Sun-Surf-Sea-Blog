@@ -17,9 +17,9 @@
 </div>
 <br>
 <h3 class="reviewImg"><%= blogPost.headline %></h3>
-<br>
-<h4 class="homeTitle">Leave a Review:</h4>
-<br><br>
+
+<div class="newBlogForm">
+    <h4 class="homeTitle">Leave a Review:</h4>
     
     <form action="/reviews/create/<%= blogPost._id %>" method="POST">
         <!-- FORM INPUT NEW BLOG POST -->
@@ -36,14 +36,14 @@
         <br>
         
         <label for="reviewDescription">Description:</label>
-        <input class="input" type="text" id="topic" name="topic" required>
+        <input class="input" type="text" id="reviewDescription" name="reviewDescription" required>
         <br>
 
         <br><br>
-        <input type="submit" value="SUBMIT">
+        <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="SUBMIT">
         <br><br><br>
     </form>
-
+</div>
     <%- include('./partials/foot.ejs') %>
 </body>
 

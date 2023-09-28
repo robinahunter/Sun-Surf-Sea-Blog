@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <%- include('partials/nav.ejs') %>
     <br>
 <br>
 <div class="reviewImg">
@@ -16,7 +16,7 @@
 </div>
     <br>
     <h3 class="reviewImg"><%= blogPost.headline %></h3>
-    <br>
+    <div class="newBlogForm">
     <h4 class="homeTitle">Edit Blog Post:</h4>
 
     <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=PUT">
@@ -49,8 +49,9 @@
         <input class="input" type="text" id="description" name="description" required>
         <br><br>
         
-        <input type="submit" value="EDIT">
+        <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="EDIT">
     </form>
+</div>
     <br><br><br><br>
     <%- include('./partials/foot.ejs') %>
 </body>

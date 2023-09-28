@@ -57,13 +57,9 @@ router.get('/:id', (req, res) => {
 });
 
 // Destroy Route: DELETE localhost:3000/reviews/:id
-router.delete('/delete/:id', (req, res) => {
-    db.BlogPost.findOneAndUpdate(
-        { 'reviews._id': req.params.id },
-        { $pull: { reviews: { _id: req.params.id } } },
-        { new: true }
-    )
-        .then(() => res.redirect('reviews/reviews'))
+router.delete('/:id', (req, res) => {
+    db.BlogPost.findOneAndRemove(req.params.id)
+        .then(() => res.redirect('/blogPosts/' + blogPost._id))
 });
 
 
