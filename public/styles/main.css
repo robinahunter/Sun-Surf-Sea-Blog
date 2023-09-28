@@ -158,6 +158,15 @@ body {
      margin: 0;
  }
  /* BLOG DETAIL*/
+ .detailTitleBox {
+     max-width: 900px;
+     background-color: white;
+     margin: auto;
+     padding: 5%;
+ }
+ .detailTopBox {
+    display: block;
+}
  .blogDetailText {
     margin: auto;
     word-wrap: break-word;
@@ -433,11 +442,20 @@ body {
         text-align: center;
         margin: 0;
     }
-    
+
     /*---DETAIL PAGE---*/
     .detailImg {
         max-width: 100%;
-        border-radius: 0;
-        margin: auto;
+        border-radius: 5%;
+        margin: 0;
      }
+     .detailTitleBox {
+        max-width: 100%;
+        background-color: white;
+        margin: auto;
+        padding: 0;
+    }
+    .detailTopBox {
+       display: block;
+   }
 }
