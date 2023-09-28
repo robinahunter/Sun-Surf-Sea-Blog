@@ -433,4 +433,11 @@ body {
         text-align: center;
         margin: 0;
     }
+    
+    /*---DETAIL PAGE---*/
+    .detailImg {
+        max-width: 100%;
+        border-radius: 0;
+        margin: auto;
+     }
 }
