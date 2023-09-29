@@ -40,7 +40,7 @@ const blogPosts = [
         image: 'https://i.postimg.cc/43FcGMhY/maui.jpg',
         imageSource: 'photo by john bell, unsplash',
         description: "The Magic of Maui's Waters",
-        featured: true,
+        featured: false,
         datePublished: "2023-09-22T17:43:05.000Z"
     },
     {
@@ -113,7 +113,7 @@ const blogPosts = [
         image: 'https://i.postimg.cc/cJggxVYr/jorge-zapata-unsplash-blog.jpg',
         imageSource: 'photo by jorge zapata, unsplash',
         description: "The Lake of Seven Colors",
-        featured: true,
+        featured: false,
         datePublished: "2023-08-21T08:32:14.000Z"
     },
     {
@@ -200,7 +200,7 @@ const blogPosts = [
         image: `https://i.postimg.cc/C5NfJs7j/makenzie-cooper-4-unsplash.jpg`,
         imageSource: `photo by makenzie cooper, unsplash`,
         description: `Paddling Pristine PNW Lakes`,
-        featured: false ,
+        featured: true,
         datePublished: `2023-09-26T10:02:34.000Z`
     },
     {
@@ -233,7 +233,7 @@ const blogPosts = [
         image: `https://i.postimg.cc/Wz60CvNq/jacob-plumb-unsplash.jpg`,
         imageSource: `photo by jacob plumb, unsplash`,
         description: `Exploring Okinawa, Japan`,
-        featured: false ,
+        featured: true,
         datePublished: `2023-07-11T08:02:14.000Z`
     },
     {

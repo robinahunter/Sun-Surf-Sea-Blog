@@ -47,9 +47,12 @@ body {
     transition: 0.5s ease-out;
    }
 /* HOME */
+
 .Page {
     border-radius: 1%;
     margin-top: 3%;
+    background-color:#024468;
+    animation: fade-in 1s linear both;
 }
 .featureTopBox {
     display: block;
@@ -254,6 +257,7 @@ body {
     margin: 0;
     box-sizing: border-box;
     color: #1c2124;
+    background-color:#f6ede3;
 }
 
 /* SEARCH PAGE */
@@ -292,9 +296,21 @@ body {
 }
 /* SUBMIT NEW BLOG */
 .newBlogForm {
-    margin: 11%;
+    margin: 0 11%;
 }
 
+/*-------- KEYFRAMES -------*/
+@keyframes fade-in {
+    from {
+        background-color:#024468;
+        opacity: 0;
+    }
+
+    to {
+        background-color: white;
+        opacity: 1;
+    }
+}
 /*-------- MEDIA QUERY -------*/
 
 @media (max-width: 768px) {
@@ -369,10 +385,8 @@ body {
     body {
         display: flex;
         flex-direction: column;
-        width: 100%;  
         padding: 1%;     
     }
-   
     .featureTopBox {
         display: flex;
         flex-direction: column;
@@ -380,17 +394,18 @@ body {
     }
     .titleBox {
         flex-direction: column;
-        max-width: 100%;
+        
         background-color: white;
         margin: auto;
-        padding: 0;
+        padding: 1%;
+        text-align: center;
     }
     .featureImg {
-        position: absolute;
+        position:absolute;
         display: flex;
         flex-direction: column;
-        width: 100%;  
-          
+        width: 200%;
+        object-fit:fill;
     }
     .featureImgTxt{
         display: flex;
@@ -405,7 +420,7 @@ body {
         margin-top: 70%;
         display: flex;
         flex-direction: column;
-        width: 100%;  
+        width: 90%;  
         text-align: justify;
     }
     .homeTitle {
@@ -425,6 +440,7 @@ body {
         margin: auto;
         white-space: nowrap;
         word-wrap: break-word;
+        text-align: center;
     }
     .featured {
         padding: 0;
@@ -433,10 +449,12 @@ body {
         text-decoration: none;
         list-style: none;
         margin: auto;
+        text-align: center;
     }
     .featuredMoreImg {
+        padding-top: 5%;
         border-radius: 11%;
-        max-width: 100%;
+        max-width: 85%;
         height: auto;
         text-decoration: none;
         list-style: none;
@@ -445,12 +463,13 @@ body {
         object-fit: cover;
     }
     .featuredMoreTitle {
-        max-width: 33%;
+        max-width: 100%;
         overflow: hidden ellipsis;
         white-space: nowrap;
+        text-align: center;
     }
     .featuredMoreImg:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 
     /* ABOUT PAGE */
@@ -575,4 +594,15 @@ body {
     text-align: center;
     margin: 0;
 }
+}
+@keyframes fade-in {
+    from {
+        background-color: black;
+        opacity: 0;
+    }
+
+    to {
+        background-color: cadetblue;
+        opacity: 1;
+    }
 }

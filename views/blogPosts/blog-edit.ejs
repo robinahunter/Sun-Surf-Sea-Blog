@@ -7,18 +7,19 @@
 </head>
 
 <body>
+    <div class="Page container-xxl flex-container bg-white shadow-lg">
     <%- include('partials/nav.ejs') %>
     <br>
-<br>
-<div class="reviewImg">
-    <img class="reviewImg"  src="<%= blogPost.image %>" alt="item for sale" width="50%">
-    <p class="reviewImgTxt"><%= blogPost.imageSource %></p>
-</div>
-    <br>
+    <div class="reviewImg">
+        <img class="reviewImg"  src="<%= blogPost.image %>" alt="item for sale" width="50%">
+        <p class="reviewImgTxt"><%= blogPost.imageSource %></p>
+    </div>
+        <br>
     <h3 class="reviewImg"><%= blogPost.headline %></h3>
     <div class="newBlogForm">
+        <br>
     <h4 class="homeTitle">Edit Blog Post:</h4>
-
+        <br>
     <form method="POST" action="/blogPosts/<%= blogPost._id %>?_method=PUT">
         <!-- FORM INPUT to UPDATE BLOG POST -->
         <label for="authorName">Author:</label>
@@ -50,9 +51,12 @@
         <br><br>
         
         <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="EDIT">
+        <br><br>
     </form>
 </div>
-    <br><br><br><br>
+    <br><br>
+</div>
+    <br>
     <%- include('./partials/foot.ejs') %>
 </body>
 

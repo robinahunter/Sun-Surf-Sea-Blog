@@ -7,9 +7,11 @@
 </head>
 
 <body>
+    <div class="Page container-xxl flex-container bg-white shadow-lg">
     <%- include('partials/nav.ejs') %>
+    <br>
     <h2 class="homeTitle"> New Blog Post</h2>
-    <br><br>
+    <br>
 <div class="newBlogForm">
     <form method="POST" action="/blogPosts">
         <!-- FORM INPUT NEW BLOG POST -->
@@ -42,9 +44,12 @@
         <br><br>
         
         <input class="btn btn-outline-secondary btn-sm px-3 me-md-2" type="submit" value="CREATE">
+        <br><br>
     </form>
+    <br><br>
 </div>
-    <br><br><br><br>
+</div>
+<br>
     <%- include('./partials/foot.ejs') %>
 </body>
 
