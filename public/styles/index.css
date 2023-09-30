@@ -1,5 +1,7 @@
 /*---PARALLEX HOME SCREEN------------*/
+
 body {
+    background-image: none;
     background-color: #024468;
 }
 .logoHome2 {
@@ -20,6 +22,7 @@ body {
 .parallax {
     pointer-events: auto;
     transform: translate(-50%, -50%);
+    transition: 0.1s cubic-bezier(.2, .49, .32, .99);
 }
 .navHome2 {
     max-width: 1400px;
