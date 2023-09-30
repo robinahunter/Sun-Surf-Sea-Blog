@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'SunSurfSea | HOME'}) %>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/index.css">
+</head>
+
+<body >
+<div class="vignette">
+    <header class="headerHome2">
+        <nav class="navHome2">
+            <img src="https://i.postimg.cc/T1150NWy/sun-surf-sea-LOGOwhite.png" class="logoHome2" alt="">
+            <ul class="headUlHome2">
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/blogPosts">Explore</a>
+                </li>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="mainHome2">
+        <img src="assets/background.png" data-speedx="0.3" data-speedy="0.38" class="parallax homeBackground">
+        <div class="">
+            <h1 data-speedx="0.17" data-speedy="0.18" class="parallax title">sun surf sea</h1></div>
+        <img src="assets/Fog Back.png" data-speedx="0.25" data-speedy="0.28" class="parallax fogBack">
+        <img src="assets/Ridge.png" data-speedx="0.1" data-speedy="0.12" class="parallax ridge">
+        <div class="">
+            <h2 data-speedx="0.07" data-speedy="0.08" class="subTitle parallax">a lifestyle odyssey</h2></div>
+        <img src="assets/Fog Front.png" data-speedx="0.05" data-speedy="0.06" class="parallax fogFront">
+        <img src="assets/Sun Ray.png" class="sunRay">
+    </main>
+</div>
+   
+</body>
+<script>
+    const parallax_el = document.querySelectorAll('.parallax');
+    let xValue = 0, yValue = 0;
+    window.addEventListener("mousemove", (e) => {
+        xValue = e.clientX - window.innerWidth / 2;
+        yValue = e.clientY - window.innerHeight / 2;
+        
+        parallax_el.forEach((el) => {
+            let speedx = el.dataset.speedx;
+            let speedy = el.dataset.speedy;
+
+            el.style.transform = `translateX(calc(-50% + ${
+                xValue * speedx
+            }px)) translateY(calc(-50% + ${yValue * speedy}px)`;
+        });
+    });
+</script>
+</html>
+                      
+                             

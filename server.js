@@ -71,9 +71,13 @@ app.use(methodOverride('_method'));
 
 
 // Mount routes
+// LandingPage route
+app.get('/', function (req, res) {
+            res.render('index') 
+});
 
 // Home route
-app.get('/', function (req, res) {
+app.get('/home', function (req, res) {
     db.BlogPost.find({ featured: true })
         .then(blogPosts => {
             res.render('home', {
