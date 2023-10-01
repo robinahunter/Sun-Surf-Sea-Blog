@@ -72,7 +72,7 @@ body {
     justify-content: center;
 }
 .featureImgTxt{
-   margin: auto;
+    margin: auto;
     font-size: 8pt;
     color:rgb(183, 181, 181);
     padding: 0 1%;
@@ -404,7 +404,7 @@ body {
         padding: 1%;
         text-align: center;
     }
-    .featureImg {
+    .featureImg, .featureImgVideo {
         position:absolute;
         display: flex;
         flex-direction: column;
@@ -420,8 +420,17 @@ body {
         color:rgb(183, 181, 181);
         padding: 0 1%;
     }
+    .featureImgVideo {
+        display: flex;
+        flex-direction: column;
+        width: 100%;  
+        margin: auto;
+        font-size: 8pt;
+        color:rgb(183, 181, 181);
+        padding: 0;
+    }
     .featureTextBox {
-        margin-top: 70%;
+        margin-top: 90%;
         display: flex;
         flex-direction: column;
         width: 90%;  

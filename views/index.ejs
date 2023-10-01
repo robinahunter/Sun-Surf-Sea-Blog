@@ -29,14 +29,14 @@
 
         <a href="/home" class="play fade btn btn-primary btn-dark btn-sm px-3 me-md-4">Enter</a>
         
-        <img src="assets/background.png" data-speedx="0.3" data-speedy="0.38" class="parallax homeBackground">
+        <img src="assets/background.png" data-speedx="0.3" data-speedy="0.38" data-speedz="0" class="parallax homeBackground">
         <div class="">
-            <h1 data-speedx="0.17" data-speedy="0.18" class="parallax title">sun surf sea</h1></div>
-        <img src="assets/Fog Back.png" data-speedx="0.25" data-speedy="0.28" class="parallax fogBack">
-        <img src="assets/Ridge.png" data-speedx="0.1" data-speedy="0.08" class="parallax ridge">
+            <h1 data-speedx="0.17" data-speedy="0.18" data-speedz="0.15" class="parallax title">sun surf sea</h1></div>
+        <img src="assets/Fog Back.png" data-speedx="0.25" data-speedy="0.28" data-speedz="0.07" class="parallax fogBack">
+        <img src="assets/Ridge.png" data-speedx="0.1" data-speedy="0.08" data-speedz="0.3" class="parallax ridge">
         <div class="">
-            <h2 data-speedx="0.07" data-speedy="0.08" class="subTitle parallax">a lifestyle odyssey</h2></div>
-        <img src="assets/Fog Front.png" data-speedx="0.05" data-speedy="0.06" class="parallax fogFront">
+            <h2 data-speedx="0.07" data-speedy="0.08" data-speedz="0" class="subTitle parallax">a lifestyle odyssey</h2></div>
+        <img src="assets/Fog Front.png" data-speedx="0.05" data-speedy="0.06" data-speedz="0" class="parallax fogFront">
         <img src="assets/Sun Ray.png" class="sunRay">
     </main>
 </div>
@@ -53,9 +53,14 @@
             let speedx = el.dataset.speedx;
             let speedy = el.dataset.speedy;
 
+            let isInLeft = parseFloat(getComputedStyle(el).left) < window.innerWidth / 2 ? 1 : -1;
+            let zValue = (e.clientX - parseFloat(getComputedStyle(el).left)) * isInLeft * 0.1;
+
             el.style.transform = `translateX(calc(-50% + ${
                 xValue * speedx
-            }px)) translateY(calc(-50% + ${yValue * speedy}px)`;
+            }px)) translateY(calc(-50% + ${
+                yValue * speedy
+            }px)) perspective(2300px) translateZ(${zValue}px)`;
         });
     });
 </script>
