@@ -67,6 +67,10 @@ body {
     max-width: 85%;
     padding: 2%;   
 }
+.featureImgVideo {
+    border-radius: 11%;
+    justify-content: center;
+}
 .featureImgTxt{
    margin: auto;
     font-size: 8pt;

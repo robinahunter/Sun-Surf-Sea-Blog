@@ -11,7 +11,7 @@ body {
 }
 .headerHome2 {
     position: absolute;
-    z-index: 9999;
+    z-index: 9900;
     width: 100%;
     padding: 0.9rem 0;
     top: 0;
@@ -30,6 +30,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.a:hover {
+    color: #6ecbd2;
 }
 .headUlHome2 {
     display: flex;
@@ -99,7 +102,6 @@ body {
 .title {
     position: absolute;
     display: flex;
-    width: 2800 px;
     margin: auto;
     font-size: 6.5rem;
     top: calc(30% - 0px);
@@ -112,16 +114,16 @@ body {
 }
 .fogBack {
     position: absolute;
-    width: 1900px;
-    top: calc(40% - 0px);
-    right: calc(50% + 0px);
+    width: 2200px;
+    top: calc(50% + 300px);
+    left: 0;
     z-index: 3;
 }
 .ridge {
     position: absolute;
-    width: 1900px;
+    width: 2000px;
     top: calc(75% - 0px);
-    left: calc(50% + 10px);
+    left: calc(55% + 10px);
     z-index: 4;
 }
 .subTitle {
@@ -161,4 +163,22 @@ body {
     left: 0;
     background-color: radial-gradient(ellipse at center, rgba(2, 68, 104, 0) (2,68,104,0.7));
     z-index: 9000;
+}
+.play {
+    position: absolute;
+    display: flex;
+    top: calc(50% + 50px);
+    left: 50%;
+    animation: fadeInAnimation ease-in 4s;
+    animation-fill-mode:forwards;
+    z-index: 9999;
+    align-items: center;
+    pointer-events: auto;
+    cursor: pointer;
+    background-color: #024468;
+    border: none;
+}
+@keyframes fadeInAnimation {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
