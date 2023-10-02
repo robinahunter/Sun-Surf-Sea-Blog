@@ -1,38 +1,43 @@
 /*---PARALLEX HOME SCREEN------------*/
-
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
-    background-image: none;
-    background-color: #024468;
+    max-width: 100%;
+    margin: auto;
+    background-image: url("https://i.postimg.cc/HjD6V0DV/Wave-Cream.png");
 }
 .logoHome2 {
     width: 150px;
     padding: 0;
+    display: flex;
     justify-content: center;
 }
 .headerHome2 {
     position: absolute;
-    z-index: 9900;
+    margin: auto;
+    z-index: 9999;
     width: 100%;
     padding: 0.9rem 0;
     top: 0;
     left: 0;
+    display: flex;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     justify-content: center;
 }
 .parallax {
     pointer-events: auto;
     transform: translate(-50%, -50%);
-    transition: 0.1s cubic-bezier(.2, .49, .32, .99);
+    transition: 0.1s cubic-bezier(0.2, 0.49, 0.32, 0.99);
 }
 .navHome2 {
+    position: relative;
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.a:hover {
-    color: #6ecbd2;
 }
 .headUlHome2 {
     display: flex;
@@ -47,45 +52,6 @@ body {
     font-weight: 300;
     font-size: 0.83rem;
 }
-.hamburger2 {
-    padding-left: 1.5rem;
-}
-.hamburger2 a {
-    padding: 0;
-    width: 37px;
-    height: 37px;
-    display: flex;
-    border-radius: 50%;
-    background-color:#024468;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    justify-content: center;
-    align-items: center;
-}
-.hamburger2, .bar2 {
-    position: relative;
-    width: 52%;
-    height: 1.3px;
-    background-color:#024468;
-    border-radius: 2px;
-}
-.hamburger2 .bar2::before, 
-.hamburger2 .bar2::after {
-    content: "";
-    position:absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    height: 100%;
-    background-color: inherit;
-    border-radius: 2px;
-}
-.hamburger2 .bar2::before {
-    top: -4.5px;
-}
-.hamburger2 .bar2::after {
-    top: 4.5px;
-}
 .mainHome2 {
     position: relative;
     height: 100vh;
@@ -94,6 +60,7 @@ body {
 }
 .homeBackground {
     position: absolute;
+    margin: auto;
     width: 2800px;
     top: calc(75% - 100px);
     left: calc(50% + 10px);
@@ -128,12 +95,11 @@ body {
 }
 .subTitle {
     position: absolute;
-    display: flex;
     width: 2800 px;
     font-size: 3rem;
     font-weight: 100;
-    top: calc(50% - 0px);
-    left: calc(50% + 10px);
+    top: 50%;
+    left: 50%;
     color: white;
     align-items: center;
     line-height: 0.5;
@@ -143,26 +109,9 @@ body {
 .fogFront {
     position: absolute;
     width: 1200px;
-    top: calc(75% - 0px);
+    top: 85%;
     left: calc(75% + 10px);
     z-index: 6;
-}
-.sunRay {
-    position: absolute;
-    width: 800px;
-    top: 0;
-    right: 0;
-    pointer-events: none;
-    z-index: 8;
-}
-.vignette {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: radial-gradient(ellipse at center, rgba(2, 68, 104, 0) (2,68,104,0.7));
-    z-index: 9000;
 }
 .play {
     position: absolute;
@@ -178,12 +127,24 @@ body {
     background-color: #024468;
     border: none;
 }
+.sunRay {
+    position: absolute;
+    width: 800px;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 8;
+}
 @keyframes fadeInAnimation {
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
+@keyframes scroll {
+    from { top: 60%; }
+}
 
 @media (max-width: 1100px) {
+
     .title {
         font-size: 2.75rem;
         top: calc(30% - 0px);
@@ -210,7 +171,91 @@ body {
         width: 550px;
         top: 0;
         right: -100px;
+        left: 0;
         pointer-events: none;
         z-index: 8;
     }
+    @keyframes fadeInAnimation {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    @keyframes scroll {
+        from { top: 60%; }
+    }
 }
+@media (max-width: 768px) {
+
+    .homeBackground {
+        position: absolute;
+        width: 2800px;
+        top: calc(75% - 100px);
+        left: calc(50% + 10px);
+        z-index: 1;
+    }
+    .title {
+        position: absolute;
+        display: flex;
+        margin: auto;
+        font-size: 2.5rem;
+        top: calc(20% - 0px);
+        left: calc(50% + 10px);
+        color: white;
+        align-items: center;
+        animation: fadeInAnimation ease-in 2s;
+        z-index: 2;
+    }
+    .fogBack {
+        position: absolute;
+        width: 100%;
+        top: calc(50% + 300px);
+        left: 0;    
+        z-index: 3;
+    }
+    .ridge {
+        position: absolute;
+        width: 2000px;
+        top: calc(75% - 0px);
+        left: calc(55% + 10px);
+        animation: scroll 3s linear forwards;
+        z-index: 4;
+    }
+    .subTitle {
+        position: absolute;
+        display: flex;
+        width: 2800 px;
+        font-size: 1.75rem;
+        font-weight: 100;
+        top: calc(30% - 0px);
+        left: calc(50% + 10px);
+        color: white;
+        align-items: center;
+        line-height: 0.5;
+        pointer-events: auto;
+        animation: scroll 3s linear forwards;
+        z-index: 5;
+    }
+    .fogFront {
+        position: absolute;
+        width: 1200px;
+        top: calc(75% - 0px);
+        left: calc(75% + 10px);
+        z-index: 6;
+    }
+    .sunRay {
+        position: absolute;
+        width: 550px;
+        top: 0;
+        right: -100px;
+        pointer-events: none;
+        animation: fadeInAnimation ease-in 4s;
+        z-index: 8;
+    }
+    @keyframes fadeInAnimation {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    @keyframes scroll {
+        from { top: 60%; }
+    }
+}
+
