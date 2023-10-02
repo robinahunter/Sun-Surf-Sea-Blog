@@ -8,11 +8,15 @@ The project is a responsive application designed for a blog website. The website
 Within the application, users have the ability to search for and sort the available blogs using a sort feature. When a user clicks on a blog title, they are redirected to a dedicated detail page where they can access the complete content of the blog. Additionally, they can leave a review of the blog and post new blogs.
 
 ## Screen Screenshot of app
->
+>![Alt text](public/assets/landingPage.png)
 
->
+>![Alt text](public/assets/homePage.png)
 
->
+>![Alt text](public/assets/index.png)
+
+>![Alt text](public/assets/about.png)
+
+>![Alt text](public/assets/newPost.png)
 
 ## Installation:
 
@@ -82,5 +86,8 @@ https://www.youtube.com/watch?v=Yo3j_Dx4u7c
 Raddy, Build a Recipe Blog using Node.js and MongoDB:
 https://www.youtube.com/watch?v=OEdPH4fV7vY
 
+Scott Draper, General Assembly, CSS transitions
+https://git.generalassemb.ly/SEIR-Phoenix/CSS-Fundamentals/blob/main/Labs/2.%20Page%20Transitions.md
 
-Scott Draper, General Assembly Instructor, CSS transition.
+w3schools video tag
+https://www.w3schools.com/tags/tag_video.asp
