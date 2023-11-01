@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
 
 // Destroy Route: DELETE localhost:3000/reviews/:id
 router.delete('/:id', (req, res) => {
-    db.BlogPost.findOneAndRemove(req.params.id)
+    db.BlogPost.findOneAndDelete(req.params.id)
         .then(() => res.redirect('/blogPosts/' + blogPost._id))
 });
 

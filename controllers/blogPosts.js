@@ -86,7 +86,7 @@ router.post('/search', (req, res) => {
 
 //Destroy route
 router.delete('/:id', (req, res) => {
-    db.BlogPost.findByIdAndRemove(req.params.id)
+    db.BlogPost.findByIdAndDelete(req.params.id)
     .then(() => res.redirect('/blogPosts/'))
 });
 
